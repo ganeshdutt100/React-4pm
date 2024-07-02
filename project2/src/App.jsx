@@ -5,6 +5,7 @@ import './App.css'
 import Nabvar from './components/Nabvar'
 import About from './components/About'
 import UseEffect from './components/UseEffect'
+import UseEffect2 from './components/UseEffect2'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -13,7 +14,8 @@ function App() {
     <>
       {/* <Nabvar /> */}
       {/* <About /> */}
-      <UseEffect />
+      {/* <UseEffect /> */}
+      <UseEffect2 />
     </>
   )
 }
