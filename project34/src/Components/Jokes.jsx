@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 const Jokes = () => {
   // const [jokes, setJokes] = useState({ aman: "", shivang: "" });
@@ -11,6 +11,10 @@ const Jokes = () => {
       .then(data => setJokes(data))
       .catch(err => console.log(err))
   }
+
+  useEffect(() => {
+    fetchJokes();
+  }, []);
   return (
     <div>
       <h1>Jokes Generator</h1>
