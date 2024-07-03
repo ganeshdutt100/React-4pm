@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+// import style from './Jokes.modules.css'
 
 const Jokes = () => {
   // const [jokes, setJokes] = useState({ aman: "", shivang: "" });
