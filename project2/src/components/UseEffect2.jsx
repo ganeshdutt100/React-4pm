@@ -4,7 +4,7 @@ const UseEffect2 = () => {
   const [count, setCount] = useState(10);
   useEffect(() => {
     const a = setInterval(() => {
-      setCount(x => x - 1);
+      setCount(count - 1);
     }, 1000);
 
     // return () => {

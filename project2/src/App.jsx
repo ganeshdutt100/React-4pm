@@ -6,6 +6,7 @@ import Nabvar from './components/Nabvar'
 import About from './components/About'
 import UseEffect from './components/UseEffect'
 import UseEffect2 from './components/UseEffect2'
+import APIcall from './components/APIcall'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -16,6 +17,7 @@ function App() {
       {/* <About /> */}
       {/* <UseEffect /> */}
       <UseEffect2 />
+      {/* <APIcall /> */}
     </>
   )
 }
