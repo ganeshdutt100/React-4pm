@@ -15,6 +15,11 @@ const testimonials = [
     text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus dolor cupiditate veritatis quasi non aliquam alias similique, laboriosam assumenda voluptates?",
     author: "Aman Bhai"
   },
+  {
+    img: "https://img.freepik.com/free-photo/cutes-tiger-nature_23-2150853097.jpg?t=st=1720181830~exp=1720185430~hmac=4c58488a82ddd27fda8bccd5801926c6054f435538df6a3fb1fe188edc72d8cb&w=360",
+    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus dolor cupiditate veritatis quasi non aliquam alias similique, laboriosam assumenda voluptates?",
+    author: "Gola Bhai"
+  },
 
 ]
 const Testimonial = () => {
@@ -29,14 +34,28 @@ const Testimonial = () => {
   }
   return (
     <div>
+      <button onClick={previous}>◀</button>
+
+      <button onClick={next}>▶</button>
       <div>
         <img src={testimonials[data].img} alt="" width={"100px"} height={"100px"} />
         <p>{testimonials[data].text}</p>
         <p>{testimonials[data].author}</p>
       </div>
-      <button onClick={previous}>◀</button>
 
-      <button onClick={next}>▶</button>
+
+      <div>
+        {testimonials.map((index) => (
+          <span key={index} style={
+            {
+              width: "10px", height: "10px", borderRadius: "50%",
+              backgroundColor: testimonials[data] === index ? "blue" : "white",
+              display: "inline-block", marginLeft: "5px",
+              cursor: "pointer"
+            }
+          }></span>
+        ))}
+      </div>
     </div>
   )
 }
