@@ -3,13 +3,15 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Slider from './components/Slider'
+import Testimonial from './components/Testimonial'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      <Slider />
+      {/* <Slider /> */}
+      <Testimonial />
     </>
   )
 }
