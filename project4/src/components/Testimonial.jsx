@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+
 const testimonials = [
   {
     img: "https://img.freepik.com/free-photo/front-view-wild-tiger-nature_23-2150747950.jpg?uid=R100292432&ga=GA1.1.454077324.1719049951&semt=ais_hybrid",
@@ -20,44 +21,51 @@ const testimonials = [
     text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus dolor cupiditate veritatis quasi non aliquam alias similique, laboriosam assumenda voluptates?",
     author: "Gola Bhai"
   },
+];
 
-]
 const Testimonial = () => {
-
   const [data, setData] = useState(0);
 
   const previous = () => {
-    setData((x) => (x === 0 ? testimonials.length - 1 : x - 1))
-  }
+    setData((x) => (x === 0 ? testimonials.length - 1 : x - 1));
+  };
+
   const next = () => {
-    setData((x) => (x === testimonials.length - 1 ? 0 : x + 1))
-  }
+    setData((x) => (x === testimonials.length - 1 ? 0 : x + 1));
+  };
+
+  const navigationDots = (index) => {
+    setData(index);
+  };
+
   return (
     <div>
       <button onClick={previous}>◀</button>
-
       <button onClick={next}>▶</button>
       <div>
         <img src={testimonials[data].img} alt="" width={"100px"} height={"100px"} />
         <p>{testimonials[data].text}</p>
         <p>{testimonials[data].author}</p>
       </div>
-
-
       <div>
-        {testimonials.map((index) => (
-          <span key={index} style={
-            {
-              width: "10px", height: "10px", borderRadius: "50%",
-              backgroundColor: testimonials[data] === index ? "blue" : "white",
-              display: "inline-block", marginLeft: "5px",
+        {testimonials.map((Aman, index) => (
+          <span
+            onClick={() => navigationDots(index)}
+            key={index}
+            style={{
+              width: "10px",
+              height: "10px",
+              borderRadius: "50%",
+              backgroundColor: data === index ? "blue" : "white",
+              display: "inline-block",
+              marginLeft: "5px",
               cursor: "pointer"
-            }
-          }></span>
+            }}
+          ></span>
         ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Testimonial
+export default Testimonial;
