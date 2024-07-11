@@ -1,13 +1,18 @@
-import React from 'react'
+import React ,{useContext} from 'react'
 import Shivang from './Shivang'
+import { shivang } from './Context/context';
 
-const Aman = (props) => {
+
+
+const Aman = () => {
+  let amanCounter  = useContext(shivang);
   return (
 
     <div>
-        <Shivang count={props.count} />
+  
+        <Shivang  /> 
     
-    Aman</div>
+    Aman   <button onClick={()=>amanCounter.setCount((a)=>a+1)} > {amanCounter.count}</button></div>
   )
 }
 

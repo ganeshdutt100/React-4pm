@@ -1,11 +1,16 @@
-import React from 'react'
+import React , {useContext} from 'react'
+import { shivang } from './Context/context'
 
-const Yash = (props) => {
+
+const Yash = () => {
+
+
+  let counterCount  = useContext(shivang)
   return (
     
     <div>
       
-     Yash   : {props.count}</div>
+     Yash   :{counterCount.count} </div>
   )
 }
 

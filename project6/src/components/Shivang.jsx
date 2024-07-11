@@ -1,13 +1,13 @@
 import React from 'react'
 import Yash from './Yash'
 
-const Shivang = (porps) => {
+const Shivang = () => {
   return (
     <div>
     
-     <Yash count={porps.count} />
+     <Yash />
     
-    Shivang :   {porps.count}</div>
+    Shivang :  </div>
   )
 }
 
