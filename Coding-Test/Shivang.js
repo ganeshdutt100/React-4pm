@@ -85,3 +85,43 @@ class App extends React.Component {
 	);
   }
 }
+
+
+
+// Interview Questions for Experts
+// Question 4
+// What will be the behavior of useEffect hook in the below code:
+
+import React, { useState, useEffect } from "react";
+function App() {
+  const [count, setCount] = useState(0);
+ 
+  useEffect(() => {
+	const interval = setInterval(() => {
+  	setCount((prevCount) => prevCount + 1);
+	}, 1000);
+ 
+	return () => clearInterval(interval);
+  }, []);
+   return <div>Count: {count}</div>;
+}
+ export default App;
+
+// Question 5
+// Develop a web application of your choice that makes frequent requests to an external REST API. To improve latency and reduce the load on the API, implement a client-side caching strategy that caches responses to API requests and serves them from the client-side cache when the same request is made again.
+
+// Question 6
+// What is wrong with using async/await in a useEffect hook in reference to the below code snippet?
+
+function TestComponent() {
+  const [data, setData] = useState([]);
+ useEffect(() => {
+	const fetchData = async () => {
+  	const response = await fetch("/api/data");
+  	const json = await response.json();
+  	setData(json);
+	};
+	fetchData();
+  }, []);
+   return <div>{data.map((d) => <p>{d.text}</p>)}</div>;
+}

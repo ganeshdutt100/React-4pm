@@ -85,3 +85,57 @@ class App extends React.Component {
 }
 // Question 3
 // Develop a messaging application that allows users to send and receive messages in real time. The application should display a list of conversations and allow the user to select a specific conversation to view its messages. The messages should be displayed in a chat interface with the most recent message at the top. Users should be able to send new messages and receive push notifications.
+
+
+
+
+// Interview Questions for Experts
+
+// Question 1
+// Find the issue in the below code:
+
+function TestComponent(props) {
+  const [count, setCount] = useState(props.initialCount);
+  const handleClick = () => {
+    setCount(count + 1);
+  };
+ return (
+	<div>
+      <p>Count: {count}</p>
+      <button onClick={handleClick}>Increment</button>
+    </div>
+  );
+}
+// Question 2
+// What is the output of the Toolbar component in the below code snippet?
+
+import React, { useContext, createContext } from "react";
+const ThemeContext = createContext("light");
+function App() {
+  return (
+	<ThemeContext.Provider value="dark">
+  	<Toolbar />
+	</ThemeContext.Provider>
+  );
+}
+ function Toolbar() {
+  const theme = useContext(ThemeContext);
+  return <div>Current theme: {theme}</div>;
+}
+export default App;
+
+// Question 3
+// See the below code snippet and advise, will there be any issue making a REST API call in a component’s useEffect hook?
+
+import { useState } from "react";
+import axios from "axios";
+function MyComponent() {
+  const [data, setData] = useState([]);
+ useEffect(() => {
+    axios.get("/api/data").then((response) => {
+      setData(response.data);
+    });
+  }, []);
+ 
+  return <div>{data.map((d) => <p>{d.text}</p>)}</div>;
+}
