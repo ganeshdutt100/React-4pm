@@ -102,3 +102,52 @@ function App() {
 }
  
 export default App;
+
+
+// Interview Questions for Experts
+
+// Question 7
+// What will be the behavior of the useRef and useCallback hooks in the below code snippet?
+
+import React, { useState, useRef, useCallback } from "react";
+ function App() {
+  const [count, setCount] = useState(0);
+  const countRef = useRef(count);
+ 
+  const increment = useCallback(() => {
+	countRef.current = countRef.current + 1;
+	setCount(countRef.current);
+  }, []);
+ 
+  return (
+	<div>
+  	<button onClick={increment}>Increment</button>
+  	<p>Count: {count}</p>
+	</div>
+  );
+}
+ export default App;
+
+// Question 8
+// Develop a file upload component to upload multiple files simultaneously. It should display progress indicators for each file and should display a success or error message after the upload is complete.
+
+// Question 9
+// How can you optimize the handling of async data promises in the below code?
+
+import { useCallback, useEffect } from "react";
+ function TestComponent(props) {
+  const fetchData = useCallback(async () => {
+	const response = await fetch(`/api/data/${props.id}`);
+	const json = await response.json();
+	return json;
+  }, [props.id]);
+ 
+  useEffect(() => {
+    const dataPromise = fetchData();
+	// Do something with the data promise
+	return () => {
+  	// Cancel the data promise
+	};
+  }, [fetchData]);
+   return <div>My Component</div>;
+}
