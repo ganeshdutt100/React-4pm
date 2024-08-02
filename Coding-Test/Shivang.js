@@ -1,7 +1,7 @@
-Interview Questions for Beginner ReactJS Developers
+// Interview Questions for Beginner ReactJS Developers
 
-Question 1
-What will be the output of the below code if the button is clicked:
+// Question 1
+// What will be the output of the below code if the button is clicked:
 
 function App() {
   const [count, setCount] = useState(0);
@@ -15,9 +15,9 @@ function App() {
 	</div>
   );
 }
-Question 2
+// Question 2
 
-Find the issue in the below code snippet after rendering the list of names.
+// Find the issue in the below code snippet after rendering the list of names.
 
  import React from "react";
  function App() {
@@ -28,8 +28,8 @@ Find the issue in the below code snippet after rendering the list of names.
 export default App;
 
 
-Question 3
-Analyze the below code and advise what is wrong with using setState() inside the render() method:
+// Question 3
+// Analyze the below code and advise what is wrong with using setState() inside the render() method:
 import React, { Component } from "react";
  class App extends Component {
   state = {

@@ -1,6 +1,6 @@
-Interview Questions for Beginner ReactJS Developers
+// Interview Questions for Beginner ReactJS Developers
 
-Find the issue with the form’s input field in the below code snippet:
+// Find the issue with the form’s input field in the below code snippet:
 
 import React, { Component } from "react";
 class App extends Component {
@@ -26,8 +26,9 @@ Name:
 }
 }
 export default App;
-Question 10
-What issue exists in the below code regarding state variable:
+
+// Question 10
+// What issue exists in the below code regarding state variable:
 
 import React, { useState } from "react";
 function App() {
